@@ -13,6 +13,9 @@ function initialGrid () {
 
 function cellChange() {
     let newSize = prompt("How many rows and columns should there be?");
+    while(newSize > 100){
+        newSize = prompt("Pick a number less than 100");
+    }
     etch.innerHTML = "";
     etch.style.gridTemplateColumns = "repeat("+ parseInt(newSize) +", auto)";
     createGrid(newSize);
